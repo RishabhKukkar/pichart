@@ -4,10 +4,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import io.reactivex.disposables.CompositeDisposable;
+
 import static com.assignment.utils.ConstantUtils.ADD_FRAGMENT;
 import static com.assignment.utils.ConstantUtils.REPLACE_FRAGMENT;
 
 public class BaseFragment extends Fragment {
+    //Objects
+    public CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     public void changeFragment(FragmentManager fragmentManager, int container, Fragment fragment,
                                int action, boolean addToBackStack, String TAG) {
